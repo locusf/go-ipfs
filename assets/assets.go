@@ -6,6 +6,7 @@ package assets
 import (
 	"bytes"
 	"fmt"
+	"path"
 	"path/filepath"
 
 	"github.com/ipfs/go-ipfs/blocks/key"
@@ -16,12 +17,12 @@ import (
 
 // initDocPaths lists the paths for the docs we want to seed during --init
 var initDocPaths = []string{
-	"init-doc/about",
-	"init-doc/readme",
-	"init-doc/help",
-	"init-doc/contact",
-	"init-doc/security-notes",
-	"init-doc/quick-start",
+	path.Join("init-doc", "about"),
+	path.Join("init-doc", "readme"),
+	path.Join("init-doc", "help"),
+	path.Join("init-doc", "contact"),
+	path.Join("init-doc", "security-notes"),
+	path.Join("init-doc", "quick-start"),
 }
 
 // SeedInitDocs adds the list of embedded init documentation to the passed node, pins it and returns the root key
@@ -30,8 +31,8 @@ func SeedInitDocs(nd *core.IpfsNode) (*key.Key, error) {
 }
 
 var initDirIndex = []string{
-	"../vendor/dir-index-html-v1.0.0/knownIcons.txt",
-	"../vendor/dir-index-html-v1.0.0/dir-index.html",
+	path.Join("..", "vendor", "dir-index-html-v1.0.0", "knownIcons.txt"),
+	path.Join("..", "vendor", "dir-index-html-v1.0.0", "dir-index.html"),
 }
 
 func SeedInitDirIndex(nd *core.IpfsNode) (*key.Key, error) {
