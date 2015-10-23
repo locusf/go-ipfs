@@ -25,7 +25,7 @@ import (
 	ft "github.com/ipfs/go-ipfs/unixfs"
 
 	context "github.com/ipfs/go-ipfs/Godeps/_workspace/src/golang.org/x/net/context"
-	logging "github.com/ipfs/go-ipfs/vendor/QmXJkcEXB6C9h6Ytb6rrUTFU56Ro62zxgrbxTT3dgjQGA8/go-log"
+	logging "github.com/ipfs/go-ipfs/vendor/Qmf14tXR3sYCxGKavxTewcv16dkxrV7WuXux1db72B349D/go-log"
 )
 
 var log = logging.Logger("ipnsfs")

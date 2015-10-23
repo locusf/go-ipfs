@@ -18,7 +18,7 @@ import (
 	goprocess "github.com/ipfs/go-ipfs/Godeps/_workspace/src/github.com/jbenet/goprocess"
 	gpctx "github.com/ipfs/go-ipfs/Godeps/_workspace/src/github.com/jbenet/goprocess/context"
 	context "github.com/ipfs/go-ipfs/Godeps/_workspace/src/golang.org/x/net/context"
-	logging "github.com/ipfs/go-ipfs/vendor/QmXJkcEXB6C9h6Ytb6rrUTFU56Ro62zxgrbxTT3dgjQGA8/go-log"
+	logging "github.com/ipfs/go-ipfs/vendor/Qmf14tXR3sYCxGKavxTewcv16dkxrV7WuXux1db72B349D/go-log"
 )
 
 var errNoEntry = errors.New("no previous entry")

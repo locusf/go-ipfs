@@ -33,7 +33,7 @@ import (
 	addrutil "github.com/ipfs/go-ipfs/p2p/net/swarm/addr"
 	peer "github.com/ipfs/go-ipfs/p2p/peer"
 	ping "github.com/ipfs/go-ipfs/p2p/protocol/ping"
-	logging "github.com/ipfs/go-ipfs/vendor/QmXJkcEXB6C9h6Ytb6rrUTFU56Ro62zxgrbxTT3dgjQGA8/go-log"
+	logging "github.com/ipfs/go-ipfs/vendor/Qmf14tXR3sYCxGKavxTewcv16dkxrV7WuXux1db72B349D/go-log"
 
 	routing "github.com/ipfs/go-ipfs/routing"
 	dht "github.com/ipfs/go-ipfs/routing/dht"
