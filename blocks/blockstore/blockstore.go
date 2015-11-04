@@ -12,7 +12,8 @@ import (
 	context "github.com/ipfs/go-ipfs/Godeps/_workspace/src/golang.org/x/net/context"
 	blocks "github.com/ipfs/go-ipfs/blocks"
 	key "github.com/ipfs/go-ipfs/blocks/key"
-	logging "github.com/ipfs/go-ipfs/vendor/QmQg1J6vikuXF9oDvm4wpdeAUvvkVEKW1EYDw9HhTMnP2b/go-log"
+	logging "github.com/ipfs/go-ipfs/vendor/QmXJkcEXB6C9h6Ytb6rrUTFU56Ro62zxgrbxTT3dgjQGA8/go-log"
+	babel "github.com/locusf/babel"
 )
 
 var log = logging.Logger("blockstore")
@@ -61,7 +62,7 @@ func (bs *blockstore) Get(k key.Key) (*blocks.Block, error) {
 		return nil, ValueTypeMismatch
 	}
 
-	return blocks.NewBlockWithHash(bdata, mh.Multihash(k))
+	return blocks.NewBlockWithHash(babel.FromBabelianAddressCompressed(bdata), mh.Multihash(k))
 }
 
 func (bs *blockstore) Put(block *blocks.Block) error {
@@ -72,7 +73,7 @@ func (bs *blockstore) Put(block *blocks.Block) error {
 	if err == nil && exists {
 		return nil // already stored.
 	}
-	return bs.datastore.Put(k, block.Data)
+	return bs.datastore.Put(k, babel.ToBabelianAddressCompressed(block.Data))
 }
 
 func (bs *blockstore) PutMany(blocks []*blocks.Block) error {
@@ -87,7 +88,7 @@ func (bs *blockstore) PutMany(blocks []*blocks.Block) error {
 			continue
 		}
 
-		err = t.Put(k, b.Data)
+		err = t.Put(k, babel.ToBabelianAddressCompressed(b.Data))
 		if err != nil {
 			return err
 		}
